@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Dato
+comment1.params=prioridad\ numeroValor
+comment1.target=Dato(int,\ int)
+comment2.params=prioridad
+comment2.target=void\ setPrioridad(int)
+comment3.params=numeroValor
+comment3.target=void\ setNumeroValor(int)
+comment4.params=
+comment4.target=int\ getPrioridad()
+comment5.params=
+comment5.target=int\ getNumeroValor()
+numComments=6
