@@ -1,5 +1,17 @@
 #BlueJ class context
 comment0.target=Nodo
-comment1.params=dato1
-comment1.target=Nodo(Dato)
-numComments=2
+comment1.params=dato\ prioridad
+comment1.target=Nodo(int,\ int)
+comment2.params=dato
+comment2.target=void\ setDato(int)
+comment3.params=prioridad
+comment3.target=void\ setPrioridad(int)
+comment4.params=nodoSiguiente
+comment4.target=void\ setNodoSiguiente(Nodo)
+comment5.params=
+comment5.target=int\ getDato()
+comment6.params=
+comment6.target=int\ getPrioridad()
+comment7.params=
+comment7.target=Nodo\ getNodoSiguiente()
+numComments=8

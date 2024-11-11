@@ -1,3 +1,11 @@
 #BlueJ class context
 comment0.target=ListaDePrioridad
-numComments=1
+comment1.params=
+comment1.target=ListaDePrioridad()
+comment2.params=nodoRaiz
+comment2.target=void\ setNodoRaiz(Nodo)
+comment3.params=
+comment3.target=Nodo\ getNodoRaiz()
+comment4.params=DatoIn\ prioridadIn
+comment4.target=void\ insertarDatos(int,\ int)
+numComments=5
