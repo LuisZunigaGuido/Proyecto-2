@@ -8,4 +8,6 @@ comment3.params=
 comment3.target=Nodo\ getNodoRaiz()
 comment4.params=DatoIn\ prioridadIn
 comment4.target=void\ insertarDatos(int,\ int)
-numComments=5
+comment5.params=
+comment5.target=void\ imprimirLista()
+numComments=6
