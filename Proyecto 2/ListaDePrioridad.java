@@ -43,5 +43,24 @@ public class ListaDePrioridad {
             nodoActual = nodoActual.nodoSiguiente;
         }
     }
+
+    //metodo para buscar dato
+    public Nodo buscarDato(int valor) {
+
+        Nodo nodoActual = nodoRaiz;
+
+        while (nodoActual != null) {
+            if (nodoActual.getDato() == valor){
+
+                return nodoActual;
+            } else{
+                nodoActual = nodoActual.getNodoSiguiente();
+            }
+            
+        }
+
+        return null;
+
+    }
 }
 //casos si tengo nodo raiz y solo hay raiz, ahora el segundo caso es cuando lo tengo en el medio

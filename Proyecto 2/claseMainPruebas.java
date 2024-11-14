@@ -18,5 +18,14 @@ public class claseMainPruebas
         //
         System.out.println("Lista de prioridad ");
         listaPrueba.imprimirLista();
+
+        int valor = 69;
+        Nodo resultado = listaPrueba.buscarDato(valor);
+
+        if(resultado != null){
+            System.out.println("valor:" + resultado.getDato() + "prioridad" + resultado.getPrioridad()); 
+        } else {
+        System.out.println("El valor" + valor + "no existe en la lista.");
+        }
     }
 }
