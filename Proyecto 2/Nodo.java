@@ -1,6 +1,6 @@
 public class Nodo {
-    static int dato;
-    static int prioridad;
+    private int dato;
+    private int prioridad;
     Nodo nodoSiguiente;
     public Nodo(int dato, int prioridad){
         this.dato = dato;
