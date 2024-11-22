@@ -72,4 +72,35 @@ public class ListaDePrioridad {
         }
         return null;
     }
+
+    //metodo eliminar dato
+    public void eliminarDato(int valor) {
+        if (nodoRaiz == null){
+            System.out.println("Lista vacia");
+        } else if(nodoRaiz.getDato() == valor) {
+
+            Nodo nodoEliminar = nodoRaiz;
+            nodoRaiz = nodoRaiz.getNodoSiguiente();
+            nodoEliminar.setNodoSiguiente(null);
+            System.out.println("Valor" + valor + "eliminado");
+        } else {
+
+            Nodo nodoActual = nodoRaiz;
+
+            while (nodoActual.getNodoSiguiente() != null) {
+                if (nodoActual.getNodoSiguiente().getDato() == valor) {
+                    
+                    Nodo nodoEliminar = nodoActual.getNodoSiguiente();
+                    nodoEliminar = nodoActual.getNodoSiguiente();
+                    nodoActual.setNodoSiguiente(nodoEliminar.getNodoSiguiente());
+                    nodoEliminar.setNodoSiguiente(null);
+                    System.out.println("Valor" + valor + "eliminado");
+                }
+                nodoActual = nodoActual.getNodoSiguiente();
+            } 
+
+        }
+
+    }
+
 }

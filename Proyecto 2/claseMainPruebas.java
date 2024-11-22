@@ -25,5 +25,11 @@ public class claseMainPruebas
         } else {
         System.out.println("El valor " + valor + " no existe en la lista.");
         }
+
+        System.out.println("eliminando valor ");
+        listaPrueba.eliminarDato(90);
+        listaPrueba.imprimirLista();
     }
+
+    
 }
