@@ -75,7 +75,7 @@ public class Interfaz extends JFrame {
                 //resetear textfield y actualizar lista
             }
             } catch(NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Error, asegúrese de ingresar valores numéricos en el formato: dato,prioridad");
+                JOptionPane.showMessageDialog(null, "Error, favor ingresar datos en el formato: numero entero, numero entero :)");
             }
         });
         
