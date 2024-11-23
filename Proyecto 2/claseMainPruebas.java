@@ -10,10 +10,8 @@ public class claseMainPruebas
         listaPrueba.insertarDatos(1,3);
         listaPrueba.insertarDatos(2,3);
         listaPrueba.insertarDatos(2,9);
-        listaPrueba.insertarDatos(10,12);
-        listaPrueba.insertarDatos(56,19);
-        listaPrueba.insertarDatos(90,1);
-        listaPrueba.insertarDatos(59,9);
+        listaPrueba.insertarDatos(1,1);
+        
         System.out.println("\n Lista de Prioridad");
         listaPrueba.imprimirLista();
 
@@ -27,7 +25,11 @@ public class claseMainPruebas
         }
 
         System.out.println("eliminando valor ");
-        listaPrueba.eliminarDato(90);
+        listaPrueba.eliminarDato(1);
+        listaPrueba.imprimirLista();
+        
+        Nodo nodoMenor = listaPrueba.encontrarMenorPrioridad();
+        System.out.println("El menor nodo es "+nodoMenor.getDato()+ " y tiene prioridad "+nodoMenor.getPrioridad());
         listaPrueba.imprimirLista();
     }
 

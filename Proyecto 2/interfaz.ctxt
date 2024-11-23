@@ -2,6 +2,10 @@
 comment0.target=Interfaz
 comment1.params=
 comment1.target=Interfaz()
-comment2.params=args
-comment2.target=void\ main(java.lang.String[])
-numComments=3
+comment2.params=
+comment2.target=void\ actualizarPanelLista()
+comment3.params=
+comment3.target=void\ ordenarListaPrioridad()
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

@@ -78,7 +78,6 @@ public class ListaDePrioridad {
         if (nodoRaiz == null){
             System.out.println("Lista vacia");
         } else if(nodoRaiz.getDato() == valor) {
-
             Nodo nodoEliminar = nodoRaiz;
             nodoRaiz = nodoRaiz.getNodoSiguiente();
             nodoEliminar.setNodoSiguiente(null);
@@ -102,5 +101,18 @@ public class ListaDePrioridad {
         }
 
     }
+   public Nodo encontrarMenorPrioridad() {
+        Nodo nodoMin = nodoRaiz; 
+        Nodo nodoActual = nodoRaiz;
 
+        while (nodoActual != null) {
+            if (nodoActual.getPrioridad() < nodoMin.getPrioridad()) {
+                nodoMin = nodoActual;
+            }
+            nodoActual = nodoActual.getNodoSiguiente(); 
+        }
+
+        return nodoMin; 
+    }
 }
+
