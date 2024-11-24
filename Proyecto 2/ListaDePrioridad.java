@@ -74,33 +74,41 @@ public class ListaDePrioridad {
     }
 
     //metodo eliminar dato
-    public void eliminarDato(int valor) {
+    public void eliminarDato(int valor, int prioridad) {
         if (nodoRaiz == null){
             System.out.println("Lista vacia");
-        } else if(nodoRaiz.getDato() == valor) {
+        } else if(nodoRaiz.getDato() == valor && nodoRaiz.getPrioridad() == prioridad ) {
+
             Nodo nodoEliminar = nodoRaiz;
             nodoRaiz = nodoRaiz.getNodoSiguiente();
             nodoEliminar.setNodoSiguiente(null);
-            System.out.println("Valor" + valor + "eliminado");
+            System.out.println("Valor"+ " " + valor +" "+ "eliminado");
         } else {
 
             Nodo nodoActual = nodoRaiz;
 
             while (nodoActual.getNodoSiguiente() != null) {
-                if (nodoActual.getNodoSiguiente().getDato() == valor) {
+
+                Nodo nodoSiguiente = nodoActual.getNodoSiguiente();
+
+                if (nodoActual.getNodoSiguiente().getDato() == valor && nodoSiguiente.getPrioridad() == prioridad) {
                     
-                    Nodo nodoEliminar = nodoActual.getNodoSiguiente();
+                    Nodo nodoEliminar = nodoSiguiente;
                     nodoEliminar = nodoActual.getNodoSiguiente();
                     nodoActual.setNodoSiguiente(nodoEliminar.getNodoSiguiente());
                     nodoEliminar.setNodoSiguiente(null);
-                    System.out.println("Valor" + valor + "eliminado");
+                    System.out.println("Valor"+ " "+ valor + " "+ "eliminado");
+                    return;
                 }
                 nodoActual = nodoActual.getNodoSiguiente();
             } 
 
+            System.out.println("El dato"+ " "+ valor +" " + "no esta en la lista");
+
         }
 
     }
+    
    public Nodo encontrarMenorPrioridad() {
         Nodo nodoMin = nodoRaiz; 
         Nodo nodoActual = nodoRaiz;

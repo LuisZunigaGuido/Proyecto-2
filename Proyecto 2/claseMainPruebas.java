@@ -25,7 +25,7 @@ public class claseMainPruebas
         }
 
         System.out.println("eliminando valor ");
-        listaPrueba.eliminarDato(1);
+        listaPrueba.eliminarDato(2,9);
         listaPrueba.imprimirLista();
         
         Nodo nodoMenor = listaPrueba.encontrarMenorPrioridad();
