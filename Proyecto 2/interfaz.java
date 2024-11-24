@@ -104,7 +104,7 @@ public class Interfaz extends JFrame {
             String datoBuscar = ingresar.getText();
             try{
                 int numeroBuscar = Integer.parseInt(datoBuscar.trim());
-                if(lista.buscarDato(numeroBuscar)!=null){
+                if(lista.buscarDato(numeroBuscar1)!=null){
                     JOptionPane.showMessageDialog(null,"El dato fué encontrado exitosamente, el dato es "+ numeroBuscar);
                 } else{
                     JOptionPane.showMessageDialog(null,"el dato no pertenece a la lista, favor ingresar otro dato :)");

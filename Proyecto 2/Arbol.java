@@ -22,20 +22,28 @@ public class Arbol
     public void ingresarNodo(){
         
     }
-    
-    public void eliminarNodo(){
+    public void buscarNodo(int valor){
+    }
+    public void eliminarNodo(int Valor){
         
     }
-    public NodoArbol buscarNodo(NodoArbol nodoParam, int valor){
-       //caso base
-       if(nodoParam.getValor()==valor){
-           return nodoParam;
-       } else {
-           if(valor<nodoParam.getValor()){
-               return buscarNodo(NodoArbol.nodoIzquierda,valor);
-           } else {
-               return buscarNodo(NodoArbol.nodoDerecha,valor);
-           }
-       }
+    //este metodo solo evalúa la existencia del nodo 
+    public boolean existenciaNodo(NodoArbol nodo,int valor){
+        //caso base
+        if(nodo==null){
+            return false;
+        } else {
+            if(nodo.getValor()==valor){
+                return true;
+            }
+            if(nodo.getValor()<valor){
+                return existenciaNodo(nodo.getNodoDerecha(),valor);
+            } else {
+                return existenciaNodo(nodo.getNodoIzquierda(),valor);
+            }
+        }
     }
+    
+    
 }
+
