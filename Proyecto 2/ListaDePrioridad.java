@@ -74,10 +74,10 @@ public class ListaDePrioridad {
     }
 
     //metodo eliminar dato
-    public void eliminarDato(int valor, int prioridad) {
+    public void eliminarDato(int valor) {
         if (nodoRaiz == null){
             System.out.println("Lista vacia");
-        } else if(nodoRaiz.getDato() == valor && nodoRaiz.getPrioridad() == prioridad ) {
+        } else if(nodoRaiz.getDato() == valor  ) {
 
             Nodo nodoEliminar = nodoRaiz;
             nodoRaiz = nodoRaiz.getNodoSiguiente();
@@ -91,7 +91,7 @@ public class ListaDePrioridad {
 
                 Nodo nodoSiguiente = nodoActual.getNodoSiguiente();
 
-                if (nodoActual.getNodoSiguiente().getDato() == valor && nodoSiguiente.getPrioridad() == prioridad) {
+                if (nodoActual.getNodoSiguiente().getDato() == valor ) {
                     
                     Nodo nodoEliminar = nodoSiguiente;
                     nodoEliminar = nodoActual.getNodoSiguiente();

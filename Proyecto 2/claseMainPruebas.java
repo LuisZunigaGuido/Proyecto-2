@@ -9,7 +9,7 @@ public class claseMainPruebas
         listaPrueba.insertarDatos(7,7);
         listaPrueba.insertarDatos(1,3);
         listaPrueba.insertarDatos(2,3);
-        listaPrueba.insertarDatos(2,9);
+        listaPrueba.insertarDatos(5,9);
         listaPrueba.insertarDatos(1,1);
         
         System.out.println("\n Lista de Prioridad");
@@ -25,7 +25,7 @@ public class claseMainPruebas
         }
 
         System.out.println("eliminando valor ");
-        listaPrueba.eliminarDato(2,9);
+        listaPrueba.eliminarDato(5);
         listaPrueba.imprimirLista();
         
         Nodo nodoMenor = listaPrueba.encontrarMenorPrioridad();
