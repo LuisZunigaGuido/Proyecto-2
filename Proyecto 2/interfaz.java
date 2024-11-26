@@ -88,6 +88,7 @@ public class Interfaz extends JFrame {
                     lista.eliminarDato(numeroEliminar);
                     ordenarListaPrioridad();
                     JOptionPane.showMessageDialog(null,"El dato fué eliminado exitosamente :)");
+                    ingresar.setText("");
                     actualizarPanelLista();
                 } else {
                     JOptionPane.showMessageDialog(null, "Error, el dato que desea eliminar no se encuentra en la lista, favor ingrese un dato de la lista :)");
@@ -104,7 +105,7 @@ public class Interfaz extends JFrame {
             String datoBuscar = ingresar.getText();
             try{
                 int numeroBuscar = Integer.parseInt(datoBuscar.trim());
-                if(lista.buscarDato(numeroBuscar1)!=null){
+                if(lista.buscarDato(numeroBuscar)!=null){
                     JOptionPane.showMessageDialog(null,"El dato fué encontrado exitosamente, el dato es "+ numeroBuscar);
                 } else{
                     JOptionPane.showMessageDialog(null,"el dato no pertenece a la lista, favor ingresar otro dato :)");

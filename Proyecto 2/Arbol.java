@@ -19,8 +19,41 @@ public class Arbol
         return this.nodoRaiz;
     }
 
-    public void ingresarNodo(){
-        
+    public void ingresarNodo(int valorParam){
+        //Primero creamos un nodo Arbol 
+        NodoArbol nodoIngresado = new NodoArbol(valorParam);
+        //primer caso si la lista esta vacia
+        if(this.nodoRaiz == null){
+            this.nodoRaiz = nodoIngresado;
+        } else {
+            //caso en que solo este el nodo Raiz
+            if(this.nodoRaiz.getNodoIzquierda() == null && this.nodoRaiz.getNodoDerecha()==null){
+                if(this.nodoRaiz.getValor()<valorParam){
+                    this.nodoRaiz.setNodoDerecha(nodoIngresado);
+                } else {
+                    this.nodoRaiz.setNodoIzquierda(nodoIngresado);
+                }
+            } else {
+                //caso de que haya mas de un nodo en el arbol creamos el metodo recursivo
+                //caso base dividido en dos
+                NodoArbol nodoActual = this.nodoRaiz;
+                NodoArbol nodoSiguienteDerecha = nodoActual.getNodoDerecha();
+                NodoArbol nodoSiguienteIzquierda = nodoActual.getNodoIzquierda();
+                if(nodoActual.getNodoDerecha()!=null || nodoActual.getNodoIzquierda()!=null){
+                    if(valorParam == nodoActual.getNodoDerecha().getValor()){
+                        nodoActual.setNodoDerecha(nodoIngresado);
+                    } else if (valorParam == nodoActual.getNodoIzquierda().getValor()){
+                        nodoActual.setNodoIzquierda(nodoIngresado);
+                    }
+                } if(nodoActual.getNodoDerecha()!=null && nodoActual.getValor()<valorParam){
+                    nodoActual.setNodoDerecha(nodoActual);
+                    ingresarNodo(valorParam);
+                } else if(nodoActual.getNodoIzquierda()!=null && nodoActual.getValor()>valorParam){
+                    nodoActual.setNodoIzquierda(nodoActual);
+                    ingresarNodo(valorParam);
+                }
+            }
+        }
     }
     public void buscarNodo(int valor){
     }
