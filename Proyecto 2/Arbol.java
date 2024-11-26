@@ -57,9 +57,52 @@ public class Arbol
     }
     public void buscarNodo(int valor){
     }
-    public void eliminarNodo(int Valor){
+    
+    public NodoArbol eliminarNodo(NodoArbol nodo, int valor) {
+        if (nodo == null) {
+            System.out.println("Nodo no encontrado: " + valor);
+            return null;
+        }
         
+        // Si el valor que buscamos es menor, buscamos en el lado izquierdo
+        if (valor < nodo.getValor()) {
+            nodo.setNodoIzquierda(eliminarNodo(nodo.getNodoIzquierda(), valor));
+        }
+        // Si el valor es mayor, buscamos en el lado derecho
+        else if (valor > nodo.getValor()) {
+            nodo.setNodoDerecha(eliminarNodo(nodo.getNodoDerecha(), valor));
+        }
+
+        else {
+            System.out.println("Eliminando nodo  " + valor);
+            
+            // Caso Nodo sin hijos
+            if (nodo.getNodoIzquierda() == null && nodo.getNodoDerecha() == null) {
+                return null;
+            }
+            
+            // Caso Nodo con un solo hijo
+            if (nodo.getNodoIzquierda() == null) {
+                return nodo.getNodoDerecha(); 
+            }
+            if (nodo.getNodoDerecha() == null) {
+                return nodo.getNodoIzquierda();
+            }
+    
+            // Caso Nodo con dos hijos
+            NodoArbol sucesor = nodo.getNodoDerecha();
+            while (sucesor.getNodoIzquierda() != null) {
+                sucesor = sucesor.getNodoIzquierda();
+            }
+
+            nodo.setNodoRaiz(sucesor.getValor());
+    
+            nodo.setNodoDerecha(eliminarNodo(nodo.getNodoDerecha(), sucesor.getValor()));
+        }
+        
+        return nodo; 
     }
+    
     //este metodo solo evalúa la existencia del nodo 
     public boolean existenciaNodo(NodoArbol nodo,int valor){
         //caso base
