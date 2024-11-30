@@ -1,0 +1,29 @@
+Instrucciones para usar el programa
+El programa implementa dos estructuras de datos principales: una lista de prioridad ordenada y un árbol binario de búsqueda. Estas estructuras permiten gestionar datos de manera eficiente según sus respectivas funcionalidades. A continuación, se describen los métodos disponibles y cómo interactuar con ellos.
+
+1. Lista de prioridad ordenada
+La lista de prioridad se utiliza para almacenar elementos asociados a una prioridad. Los elementos con mayor prioridad (es decir, menor valor numérico) se ubican primero. Esta estructura ofrece las siguientes operaciones:
+
+Ingresar un valor con prioridad:
+Este método permite agregar un nuevo elemento a la lista especificando tanto el valor como su prioridad. La lista se ordena automáticamente según la prioridad, garantizando que los elementos más importantes estén al principio.
+
+Buscar un valor:
+Este método permite verificar si un elemento específico existe en la lista y, de ser así, obtener su posición o información correspondiente.
+
+Eliminar un valor:
+Con este método se puede eliminar un elemento específico de la lista. Si el valor no se encuentra, el programa informa que no fue posible realizar la operación.
+
+2. Árbol binario de búsqueda
+El árbol binario de búsqueda es una estructura jerárquica que organiza datos de forma eficiente para realizar búsquedas, inserciones y eliminaciones. Funciona siguiendo la regla de que los valores menores que un nodo se colocan en su subárbol izquierdo, y los mayores, en el subárbol derecho. Los métodos disponibles son:
+
+Insertar un valor:
+Este método permite agregar un nuevo nodo al árbol. El árbol se organiza automáticamente siguiendo las reglas de un árbol binario de búsqueda.
+
+Buscar un valor:
+Permite localizar un nodo con un valor específico en el árbol. Si el nodo existe, el programa devuelve su posición o una confirmación de que fue encontrado.
+
+Eliminar un valor:
+Este método elimina un nodo del árbol. Si el nodo tiene hijos, el árbol se reorganiza para mantener su estructura y propiedades.
+
+Como Interactuar con la interfaz.
+la interfaz interactua simultáneamente con la lista de prioridad y el árbol binario esto por cuestiones de tiempo y preferencia del equipo.
