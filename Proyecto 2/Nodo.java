@@ -1,7 +1,9 @@
 public class Nodo {
+    //atributos
     private int dato;
     private int prioridad;
     Nodo nodoSiguiente;
+    //constructor
     public Nodo(int dato, int prioridad){
         this.dato = dato;
         this.prioridad = prioridad;

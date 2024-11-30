@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Analizador
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Analizador\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=matriz\ fila\ columna\ numeroAnterior\ longitud
+comment1.target=void\ buscarSecuencia(int[][],\ int,\ int,\ int,\ int)
+comment2.params=matrizParam
+comment2.target=void\ IdentificarHileraLarga(int[][])
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

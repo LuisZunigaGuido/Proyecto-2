@@ -1,16 +1,28 @@
 public class ListaDePrioridad {
-    private Nodo nodoRaiz;
-    public ListaDePrioridad(){
-        this.nodoRaiz = null;
+   //atributos de la clas
+   private Nodo nodoRaiz;
+   //constructor 
+   public ListaDePrioridad(){
+       this.nodoRaiz = null;
     }
-    //setters
-    public void setNodoRaiz(Nodo nodoRaiz) {
-        this.nodoRaiz = nodoRaiz;
-    }
+   //setters
+   public void setNodoRaiz(Nodo nodoRaiz) {
+       this.nodoRaiz = nodoRaiz;
+   }
     //getters
-    public Nodo getNodoRaiz(){
-        return this.nodoRaiz;
-    } 
+   public Nodo getNodoRaiz(){
+       return this.nodoRaiz;
+   } 
+   
+   /* metodo insertarDatos
+    *   inserta datos de tipo entero en la lista de prioridad
+    * parametros de entrada
+    *   toma como parametros dos enteros para el valor y la prioridad
+    * parametros de salida
+    *   ninguno
+    * respuesta esperada
+    *       se espera que el metodo sea capaz de ingresar enteros, ademas de identificar la prioridad para ingresarlos en la pocision adecuada
+   */
     public void insertarDatos(int DatoIn, int prioridadIn) {
         Nodo nuevoNodo = new Nodo(DatoIn, prioridadIn); // Creamos un nuevo nodo con el dato y la prioridad deseada
         // Caso 1: Si la lista está vacía, el nuevo nodo es la raíz
@@ -47,20 +59,16 @@ public class ListaDePrioridad {
             }
         }
     }
-    //metodo para imprimir lista
-    public void imprimirLista(){
-        Nodo nodoActual;
-        nodoActual = this.nodoRaiz;
-        if(nodoActual==null){
-            System.out.println("lista vacía");
-        } else {
-            while(nodoActual!=null){
-                System.out.println("el Dato es "+ nodoActual.getDato() + " y la prioridad es "+ nodoActual.getPrioridad());
-                nodoActual = nodoActual.getNodoSiguiente();
-            }
-        }
-    }
-    //metodo para buscar dato
+    
+    /* metodo buscarDato
+    *   busca datos enteros ubicados en la lista
+    * parametros de entrada
+    *   toma como parametros un enteros para el valor que desea buscar
+    * parametros de salida
+    *   retorna el nodo buscado 
+    * respuesta esperada
+    *       se espera que el metodo sea capaz de buscar datos enteros y devolverlos correctamente
+   */
     public Nodo buscarDato(int valor) {
         Nodo nodoActual = nodoRaiz;
         while (nodoActual != null) {
@@ -72,25 +80,33 @@ public class ListaDePrioridad {
         }
         return null;
     }
-
-    //metodo eliminar dato
+    
+    /* metodo eliminarDato
+    *   elimina los datos enteros de la lista de prioridad
+    * parametros de entrada
+    *   toma como parametros un entero para eliminar
+    * parametros de salida
+    *   ninguno
+    * respuesta esperada
+    *       se espera que el metodo sea capaz de eliminar nodo unicamente con el dato solicitado
+   */
     public void eliminarDato(int valor) {
         if (nodoRaiz == null){
             System.out.println("Lista vacia");
         } else if(nodoRaiz.getDato() == valor  ) {
-
+    
             Nodo nodoEliminar = nodoRaiz;
             nodoRaiz = nodoRaiz.getNodoSiguiente();
             nodoEliminar.setNodoSiguiente(null);
             System.out.println("Valor"+ " " + valor +" "+ "eliminado");
         } else {
-
+    
             Nodo nodoActual = nodoRaiz;
-
+    
             while (nodoActual.getNodoSiguiente() != null) {
-
+    
                 Nodo nodoSiguiente = nodoActual.getNodoSiguiente();
-
+    
                 if (nodoActual.getNodoSiguiente().getDato() == valor ) {
                     
                     Nodo nodoEliminar = nodoSiguiente;
@@ -102,25 +118,54 @@ public class ListaDePrioridad {
                 }
                 nodoActual = nodoActual.getNodoSiguiente();
             } 
-
-            System.out.println("El dato"+ " "+ valor +" " + "no esta en la lista");
-
-        }
-
-    }
     
+            System.out.println("El dato"+ " "+ valor +" " + "no esta en la lista");
+    
+        }
+    
+    }
+   
+    /* metodo encontrarMenorPrioridad
+    *   este metodo recorre la lista de prioridad y devuelve el nodo con menor prioridad para actualizar la lista correctamente
+    * parametros de entrada
+    *   ninguno
+    * parametros de salida
+    *   ninguno
+    * respuesta esperada
+    *       se espera que el metodo sea capaz de encontrar el nodo con menor prioridad
+   */
    public Nodo encontrarMenorPrioridad() {
         Nodo nodoMin = nodoRaiz; 
         Nodo nodoActual = nodoRaiz;
-
         while (nodoActual != null) {
             if (nodoActual.getPrioridad() < nodoMin.getPrioridad()) {
                 nodoMin = nodoActual;
             }
             nodoActual = nodoActual.getNodoSiguiente(); 
         }
-
         return nodoMin; 
+    }
+    
+     /* metodo imprimirLista
+    *   recorre la lista e imprime la lista de prioridad
+    * parametros de entrada
+    *   ninguno
+    * parametros de salida
+    *   ninguno
+    * respuesta esperada
+    *       se espera que el metodo sea capaz de imprimir la lista correctamente
+   */
+    public void imprimirLista(){
+        Nodo nodoActual;
+        nodoActual = this.nodoRaiz;
+        if(nodoActual==null){
+            System.out.println("lista vacía");
+        } else {
+            while(nodoActual!=null){
+                System.out.println("el Dato es "+ nodoActual.getDato() + " y la prioridad es "+ nodoActual.getPrioridad());
+                nodoActual = nodoActual.getNodoSiguiente();
+            }
+        }
     }
 }
 

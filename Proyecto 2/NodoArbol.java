@@ -7,14 +7,17 @@
  */
 public class NodoArbol
 {
+    //atributos
     int valor;
-    public static NodoArbol nodoDerecha;
-    public static NodoArbol nodoIzquierda;
+    public NodoArbol nodoDerecha;
+    public NodoArbol nodoIzquierda;
+    //constructor
     public NodoArbol(int valor){
         this.valor = valor;
         nodoDerecha = null;
         nodoIzquierda = null;
     }
+    //setter
     public void setNodoDerecha(NodoArbol nodoDerecha){
         this.nodoDerecha = nodoDerecha;
     }
@@ -24,6 +27,7 @@ public class NodoArbol
     public void setNodoRaiz(int valor){
         this.valor = valor;
     }
+    //getters
     public int getValor(){
         return this.valor;
     }
