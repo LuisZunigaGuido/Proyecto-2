@@ -21,7 +21,8 @@ public class Interfaz extends JFrame {
     private JTextField ingresar;
     private Arbol arbol = new Arbol();
     private ListaDePrioridad lista = new ListaDePrioridad(); 
-    
+    private JLabel etiquetaLista = new JLabel("Botones para la lista de prioridad");
+    private JLabel etiquetaArbol = new JLabel("Botones para el arbol binario");
     //interfaz grafica
     public Interfaz() {
         setTitle("Interfaz Gráfica Proyecto 2");
@@ -80,6 +81,9 @@ public class Interfaz extends JFrame {
                 String[] partes = texto.split(",");
                 int numero1 = Integer.parseInt(partes[0].trim());
                 int numero2 = Integer.parseInt(partes[1].trim());
+                if(partes.length==1){
+                    JOptionPane.showMessageDialog(null, "Error al ingresar datos, favor de ingresar datos en el formato: numero entero,numero entero :)");
+                }
                 if (partes.length != 2) {
                     JOptionPane.showMessageDialog(null, "Error al ingresar datos, favor de ingresar datos en el formato: numero entero,numero entero :)");
                 } else {
@@ -277,7 +281,7 @@ public class Interfaz extends JFrame {
     
         // Dibujar el nodo
         grafico.setColor(Color.WHITE);
-        grafico.fillOval(x - 15, y - 15, 30, 30);
+        grafico.fillRect(x - 15, y - 15, 30, 30);
         grafico.setColor(Color.BLACK);
         grafico.drawString(String.valueOf(nodo.valor), x - 10, y + 5);
     
